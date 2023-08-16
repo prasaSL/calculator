@@ -10,7 +10,8 @@ Window.size = (500, 600)
 Builder.load_file('cal.kv')
 
 class calLayout(Widget):
-    pass
+    def clear(self):
+        self.ids.input.text = '0'
 
 class calApp(App):
     def build(self):
