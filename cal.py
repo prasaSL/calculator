@@ -12,6 +12,13 @@ Builder.load_file('cal.kv')
 class calLayout(Widget):
     def clear(self):
         self.ids.input.text = '0'
+    
+    def pressBtnNumber(self, button):
+        if self.ids.input.text=='0':
+            self.ids.input.text=''
+            self.ids.input.text += str(button)
+        else:
+            self.ids.input.text += str(button)
 
 class calApp(App):
     def build(self):
