@@ -29,8 +29,8 @@
             
             Button:
                 text:"%"
-                
                 font_size: 32
+                on_press:root.pressBtnSign("%")
             Button:
                 text:"CE"
                 
@@ -43,7 +43,7 @@
                 text:"/"
                 
                 font_size: 32
-
+                on_press:root.pressBtnSign("/")
             
             Button:
                 text:"7"
@@ -67,7 +67,7 @@
                 text:"x"
                 
                 font_size: 32
-
+                on_press:root.pressBtnSign("*")
 
             Button:
                 text:"4"
@@ -91,7 +91,7 @@
                 text:"-"
                 
                 font_size: 32
-
+                on_press:root.pressBtnSign("-")
 
             Button:
                 text:"1"
@@ -115,7 +115,7 @@
                 text:"+"
                 
                 font_size: 32
-
+                on_press:root.pressBtnSign("+")
 
 
             Button:
@@ -123,6 +123,7 @@
                 background_normal: ""
                 background_color: 182/255, 193/255, 194/255,1
                 font_size: 32
+                on_press: root.pressBtnminus()
             Button:
                 text:"0"
                 background_normal: ""
@@ -134,8 +135,11 @@
                 background_normal: ""
                 background_color: 182/255, 193/255, 194/255,1
                 font_size: 32
+                on_press: root.pressBtnDot()
+                
             Button:
                 text:"="
                 
                 font_size: 32
+                on_press:root.pressBtnEqual()
        
