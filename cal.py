@@ -63,7 +63,10 @@ class calLayout(Widget):
 
     #press backspace button
     def backspace(self):
-        self.ids.input.text = self.ids.input.text[:-1]
+        if len(self.ids.input.text)==1:
+            self.ids.input.text = '0'
+        else:
+            self.ids.input.text = self.ids.input.text[:-1]
 
 #main app
 class calApp(App):
