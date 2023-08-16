@@ -7,7 +7,7 @@ from kivy.lang import Builder
 from kivy.core.window import Window
 
 #set window size
-Window.size = (500, 600)
+Window.size = (400, 600)
 
 #load kv file
 Builder.load_file('cal.kv')

@@ -1,8 +1,10 @@
 #:kivy 2.1.0
+   
+
 <calLayout>
     BoxLayout:
-        padding: 5
-        spacing: 5
+        padding: 10
+        spacing: 10
         orientation: 'vertical'
         size: root.width, root.height
 
@@ -31,115 +33,173 @@
                 text:"%"
                 font_size: 32
                 on_press:root.pressBtnSign("%")
+                background_color: (0,0,0,0)
+	            background_normal: ''
+	            canvas.before:
+		            Color:
+			            rgba: (80/255, 80/255, 80/255,1)
+		            RoundedRectangle:
+			            size: self.size
+			            pos: self.pos
+			            radius: [100]
+                
             Button:
                 text:u"\u00AB" 
                 font_size: 32
                 on_press:root.backspace()
+                background_color: (0,0,0,0)
+	            background_normal: ''
+	            canvas.before:
+		            Color:
+			            rgba: (80/255, 80/255, 80/255,1)
+		            RoundedRectangle:
+			            size: self.size
+			            pos: self.pos
+			            radius: [100]
             Button:
                 text:"C"
                 on_press: root.clear()
                 font_size: 32
-            Button:
+                background_color: (0,0,0,0)
+	            background_normal: ''
+	            canvas.before:
+		            Color:
+			            rgba: (80/255, 80/255, 80/255,1)
+		            RoundedRectangle:
+			            size: self.size
+			            pos: self.pos
+			            radius: [100]
+            oprButton:
                 text:"/"
+                background_normal: ""
                 
                 font_size: 32
                 on_press:root.pressBtnSign("/")
             
-            Button:
+            numButton:
                 text:"7"
                 background_normal: ""
-                background_color: 182/255, 193/255, 194/255,1
+                # background_color: 28/255, 28/255, 28/255,1
                 font_size: 32
                 on_press:root.pressBtnNumber(7)
-            Button:
+            numButton:
                 text:"8"
                 background_normal: ""
-                background_color: 182/255, 193/255, 194/255,1
+                # background_color: 28/255, 28/255, 28/255,1
                 font_size: 32
                 on_press:root.pressBtnNumber(8)
-            Button:
+            numButton:
                 text:"9"
                 background_normal: ""
-                background_color: 182/255, 193/255, 194/255,1
+                # background_color: 28/255, 28/255, 28/255,1
                 font_size: 32
                 on_press:root.pressBtnNumber(9)
-            Button:
+            oprButton:
                 text:"x"
                 
                 font_size: 32
                 on_press:root.pressBtnSign("*")
+                background_normal: ""
+                
 
-            Button:
+            numButton:
                 text:"4"
                 background_normal: ""
-                background_color: 182/255, 193/255, 194/255,1
+                # background_color: 28/255, 28/255, 28/255,1
                 font_size: 32
                 on_press:root.pressBtnNumber(4)
-            Button:
+            numButton:
                 text:"5"
                 background_normal: ""
-                background_color: 182/255, 193/255, 194/255,1
+                # background_color: 28/255, 28/255, 28/255,1
                 font_size: 32
                 on_press:root.pressBtnNumber(5)
-            Button:
+            numButton:
                 text:"6"
                 background_normal: ""
-                background_color: 182/255, 193/255, 194/255,1
+                # background_color: 28/255, 28/255, 28/255,1
                 font_size: 32
                 on_press:root.pressBtnNumber(6)
-            Button:
+            oprButton:
                 text:"-"
                 
                 font_size: 32
                 on_press:root.pressBtnSign("-")
+                background_normal: ""
+                
 
-            Button:
+            numButton:
                 text:"1"
                 background_normal: ""
-                background_color: 182/255, 193/255, 194/255,1
+                # background_color: 28/255, 28/255, 28/255,1
                 font_size: 32
                 on_press:root.pressBtnNumber(1)
-            Button:
+            numButton:
                 text:"2"
                 background_normal: ""
-                background_color: 182/255, 193/255, 194/255,1
+                # background_color: 28/255, 28/255, 28/255,1
                 font_size: 32
                 on_press:root.pressBtnNumber(2)
-            Button:
+            numButton:
                 text:"3"
                 background_normal: ""
-                background_color: 182/255, 193/255, 194/255,1
+                # background_color: 28/255, 28/255, 28/255,1
                 font_size: 32
                 on_press:root.pressBtnNumber(3)
-            Button:
+            oprButton:
                 text:"+"
                 
                 font_size: 32
                 on_press:root.pressBtnSign("+")
+                background_normal: ""
+                
 
 
-            Button:
+            numButton:
                 text:"+/-"
                 background_normal: ""
-                background_color: 182/255, 193/255, 194/255,1
+                # background_color: 28/255, 28/255, 28/255,1
                 font_size: 32
                 on_press: root.pressBtnminus()
-            Button:
+            numButton:
                 text:"0"
                 background_normal: ""
-                background_color: 182/255, 193/255, 194/255,1
+                # background_color: 28/255, 28/255, 28/255,1
                 font_size: 32
                 on_press:root.pressBtnNumber(0)
-            Button:
+            numButton:
                 text:"."
                 background_normal: ""
-                background_color: 182/255, 193/255, 194/255,1
+                # background_color: 28/255, 28/255, 28/255,1
                 font_size: 32
                 on_press: root.pressBtnDot()
                 
-            Button:
+            oprButton:
                 text:"="
                 
                 font_size: 32
                 on_press:root.pressBtnEqual()
-       
+                background_normal: ""
+                
+        
+
+<numButton@Button>:
+    background_color: (0,0,0,0)
+	background_normal: ''
+	canvas.before:
+		Color:
+			rgba: (28/255, 28/255, 28/255,1)
+		RoundedRectangle:
+			size: self.size
+			pos: self.pos
+			radius: [100]
+<oprButton@Button>:
+    background_color: (0,0,0,0)
+    background_normal: ''
+	canvas.before:
+		Color:
+			rgba: (255/255, 149/255, 0/255,1)
+		RoundedRectangle:
+			size: self.size
+			pos: self.pos
+			radius: [100]
