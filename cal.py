@@ -22,17 +22,22 @@ class calLayout(Widget):
             pass
         else:
             self.ids.input.text += str(button)
+            
     def pressBtnSign(self, sign):
         if self.ids.input.text[-1] in ['+', '-', '*', '/']:
             pass
         else:
             self.ids.input.text += sign
+
+            
     def pressBtnminus(self):
-        text = self.ids.input.text
-        if "-" in text:
-            self.ids.input.text = text.replace("-", "")
+        if self.ids.input.text[-1] in ['+', '-', '*', '/'] or self.ids.input.text=='0':
+            pass
+        elif "-" in self.ids.input.text:
+            self.ids.input.text = self.ids.input.text.replace('-','')
         else:
-            self.ids.input.text = '-' + self.ids.input.text
+            self.ids.input.text = f'-{self.ids.input.text}'
+
     def pressBtnDot(self):
         list1=re.split('\+|\-|\*|\/|\%',self.ids.input.text)
         if len(list1)!=0  and not '.' in list1[-1] :
@@ -41,6 +46,9 @@ class calLayout(Widget):
             self.ids.input.text += '.'
         else:
             pass
+
+
+
     def pressBtnEqual(self):
         answer = eval(self.ids.input.text)
         self.ids.input.text = str(answer)
